@@ -1,0 +1,4 @@
+artysci : Podsiadlo , Malenczuk , Nosowska , Tede , OSTR , Martyniuk , Kali , END
+politycy : Kaczynski , Tusk , Morawiecki, Ziobro, END
+samochody : audi , opel , volvo , lamborghini , maseratti , ferrari , END
+znane marki : coca-cola , gucci , hugo boss , END

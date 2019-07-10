@@ -1,0 +1,6 @@
+Opis uruchomienia
+Serwer uruchamiamy z 2 parametrami: Ip i port, tak samo klienta, kolejne instrukcje beda sie wyswietlac w terminalu
+
+gra pobiera kategorie i nagrody z plików tekstowych prizes.txt i categories.txt , gdzie zapisane sa w odpowiednim do odczytu formacie
+
+gra jest wieloosobowa, mozna jednoczesnie na jednym serwerze prowadzic kilka gier

@@ -1,0 +1,23 @@
+START - rozpoczecie gry prze klienta - SERWER odpowiada OK, LET'S START
+CHECK <char>  - sprawdzenie znaku czy znajduje się w poszukiwanym słowie jesli jest SERWER odpowiada GOOD jesli nie BAD, jesli litera juz byla uzyta odpowiada LETTER USED, ONCE AGAIN
+GET-CATEGORY - losowanie kategorii - SERWER odpowiada  CATEGORY <kategoria>
+GET-WORD - losowanie słowa - SERWER odpowiada GOTIT <tu podkreślniki zamiast znaków słowa>
+SHOT | <word> - zgadywanie słowa -  SERWER odpowiada czy jest poprawne komendą GRATULACJE, WYGRALES <> ZL / NIEPRAWIDLOWE SLOWO, GRAJ DALEJ
+GET-REWARD - losowanie nagrody - SERWER odpowiada YOU'RE REWARD IS --> <prize>
+GET-DATA - pobranie z serwera danych gry , SERWER ODPOWIADA : DATA ||| <kategoria> || <zakryte slowo>  || <uzyte litery oddzielone znakiem | > || <imie gracza : kasa oddzielone znakiem |> ||
+NEW | <nazwa gry> | <nazwa zawodnika> | <ilosc graczy> - serwer tworzy gre ic zeka na zapelnienie
+JOIN | <nazwa gracza> - gracz chce dolaczyc do gry , sewer odpowiada lista dostapnych gier oddzielonych znakiem |, jesli nie ma dostepych gier serwer odsyla wiadomos NO GAMES
+GAME | <nazwa gry> - dodanie gracza do gry
+
+TIME FOR YOU - komenda wysyłana przez serwer przy zmianie aktywnego gracza do gracza aby ten wiedział ze jego kolej
+END GAME, PLAYER <nazwa zawodnika> WON - komenda wysyłana do klienta mowiaca o koncu gry i zwyciezcy
+
+
+Opis Komunikacji:
+Serwer nasluchuje na polaczenia. Klient wysyła do niego wiadomosc NEW lub JOIN. Nastepnie kiedy liczba graczy jest rowna zadeklarowanej gra rozpoczyna sie , zawodnik, ktory utworzyl gre wysyla START
+, jesli otrzymal odpowiedz OK... to wybiera kategorie (GET-CATEGORY), slowo (GET-WORD) i nagrode (GET-REWARD), po czym zaczyna rozgrywke w jednej turze zawodnik moze losowac nagrode i zgadywac
+litere(CHECK <znak>) lub tylko  odgadywac haslo(SHOT <haslo>). po wykonaniu ruchu gra przechodzi na kolejnego gracza. Przed kazdym ruchem klient pobiera dane z serwera komenda (GET-DATA)
+W przypadku odgadniecia hasla serwer wyusyla informacje do wszystkich zawodnikow po czym zamyka gre i konczy polaczenia z aktywymi graczami.
+
+
+
